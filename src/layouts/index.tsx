@@ -12,7 +12,8 @@ import styles from './index.less';
 import { Link } from 'umi';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-
+import logo from "../images/logo/logo.svg";
+import Products from "../pages/products";
 export default class Application extends React.Component {
   state = {
     collapsed: false,
@@ -27,7 +28,9 @@ export default class Application extends React.Component {
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <div className={styles.logo} />
+          <div className={styles.logo}>
+            <img src={logo} alt="company logo" height="40" width="40" />
+          </div>
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
               <PieChartOutlined />
@@ -77,7 +80,7 @@ export default class Application extends React.Component {
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
+              {/* <Products /> */}
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>rjLooper Design ©2020 Created by rjLooper group</Footer>
